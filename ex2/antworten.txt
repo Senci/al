@@ -1,0 +1,34 @@
+die Fkt. mixGaussian1d.m macht folgendes:
+
+1. übergebende Anzahl (n) von Pseudozufallszahlen (gleichverteilt) im Interval [0,1] erzeugen
+2. Anzahl der Elemente in den einzelnen Klassen basierend auf den übergebenen Auftretenswahrscheinlichkeiten (p1,p2) und den Zufallszahlen ermitteln (n1,n2)
+3. erzeugen der x-Werte in den Klassen mit übergeben Mittelwerte (m1,mu2) und normalverteilten Streuungsanteilen der übergebenen Streuungen (sigma*randn(nx,1))
+4. konkatenieren der x-Vektoren
+5. erzeugen der Klassen (0,1) für die x-Vektoren
+
+antw e3
+a)
+Würde ich nicht kaufen.
+kleinste Irrtumswahrscheinlichkeit wäre 1/3. (entscheide immer "ist k" -- alle "j" sind Fehler -- Verhältnis j zu k ist 1 zu 3)
+b)
+Würde ich auch nicht kaufen. Auftretenswahrscheinlichkeit von j ist ja nur 0.015. Somit würde ein Klassifikator der immer auf "nicht j" entscheidet schon eine Fehlerwahrscheinlichkeit von 0.015 haben. Der wäre total nutzlos obwohl es "besser" klassifiziert als der angebotene mit 0.02 Irrtumswahrscheinlichkeit.
+
+antw e5
+a)
+geg.:
+p(cs|s)=0.85 
+p(cs|ns)=0.05
+p(s)=0.6
+
+ges:
+p(cs|ns) = 0.05 (false pos.)
+p(ncs|s) = 0.15 (false neg.)
+p(cs|ns) + p(ncs|s) b= 0.2 (average)
+
+b)
+Alle mails als Spam klassifizieren --> alle Spams werden korrekt klassifiziert (false neg.=0)
+Alle mails als nicht spam klassifizieren --> keine korrekte mail wird als Spam klassifiziert (false pos.=0)
+
+c)
+
+
