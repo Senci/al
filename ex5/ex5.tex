@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{amsmath} % Required for ploting of mathematical structures
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\today} % Top center head
+\rhead{\hmwkTitle} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+
+\newcommand{\hmwkTitle}{Machine Learning Assignment \#5} % Assignment title
+\newcommand{\hmwkAuthorName}{Stefan Thomas \& Senad Licina} % Your name
+
+\begin{document}
+
+\subsection*{Exercise 1}
+Function to minimize:
+\begin{equation}
+	x_1-2x_2+4x_3
+\end{equation}
+Subject to:
+\begin{eqnarray} \label{sub:2}
+	-x_1+x_2 \geq 1 \\
+	3x_1+2x_3 \leq -1 \\
+	-2x_1-5x_3+4 \leq 0 \\
+	x_1,x_2 \leq 0 \\
+	x_3 \geq 0
+\end{eqnarray}
+Substitude $x_3$ with $x_3 = -x_3'$, multiply Eq. \ref{sub:2} with $-1$ and normalize the equations.
+\begin{eqnarray}
+	x_1-x_2 \leq 1 \\
+	3x_1-2x_3' \leq -1 \\
+	-2x_1+5x_3' \leq -4
+\end{eqnarray}
+Therefore we get:\\
+$c = \begin{pmatrix}1\\-2\\-4\end{pmatrix}$
+$b = \begin{pmatrix}1\\-1\\-4\end{pmatrix}$
+$A = \begin{pmatrix}-1 & 1 & 0\\3 & 0 & -2\\-2 & 0 & 5\end{pmatrix}$
+
+\newpage
+\end{document}
