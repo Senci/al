@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+%\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{amsmath} % Required for ploting of mathematical structures
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\today} % Top center head
+\rhead{\hmwkTitle} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+
+\newcommand{\hmwkTitle}{Machine Learning Assignment \#6} % Assignment title
+\newcommand{\hmwkAuthorName}{Stefan Thomas \& Senad Licina} % Your name
+
+\begin{document}
+
+\subsection*{Exercise 1}
+Based on our observation, the parameter C punishes the existence of noisy data points and separates these points from the surrounding points.  
+
+
+\subsection*{Exercise 2}
+a) rbf-kernel, good classifier (all points are classified correctly) \\
+b) polynomial-kernel, bad classifier (many points not classified correctly, structure of "classification-surface" is not the same as "data-surface"), can be avoided by choosing higher degree of kernel and higher C
+In Fig.2-a the empty white circles my be the support vectors (but not sure).
+
+\subsection*{Exercise 4}
+A kernel (K) must be a positive definite function, thus we have the property that there exists a c such that $ c^{T}Kc >0 $. Therefore we have to check if this property holds also for the new kernels given it holds for the original kernel(s).\\
+1) If $ c^{T}Kc >0 $ holds, then $ \alpha c^{T}Kc >0 $ also holds for $ \alpha > 0 $\\
+2) $ c^{T}(K_{1}+K_{2})c  =  c^{T}K_{1}c + c^{T}K_{2}c $ By definition, both terms are $ >0 $ and therefore the new kernel is positive definite.\\
+3) $ K_{1}=\begin{pmatrix} 1 & 0\\0 & 1\end{pmatrix} $ $ K_{2}=\begin{pmatrix} 2 & 0\\0 & 2\end{pmatrix} $ $ c=\begin{pmatrix} a & b\end{pmatrix} $ \\
+$ c^{T}K_{1}c=a^{2}+b^{2} $\\
+$ c^{T}K_{2}c=2a^{2}+2b^{2} $ but\\
+$ c^{T}(K_{1}-K_{2})c=-1a^{2}+(-1b^{2}) $
+\newpage
+\end{document}
